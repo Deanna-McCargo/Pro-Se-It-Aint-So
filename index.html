@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Se It Ain't So - Self Help Meets Smart Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2E7D87 0%, #236970 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #F59E0B;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(46, 125, 135, 0.85) 0%, rgba(35, 105, 112, 0.85) 100%),
+                        url('images/team.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: #F59E0B;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #F59E0B;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Values Section */
+        .values {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .values-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .values h2 {
+            text-align: center;
+            color: #2E7D87;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            padding: 2rem;
+            border-radius: 10px;
+            background: #f8f9fa;
+            border-left: 5px solid #F59E0B;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(46, 125, 135, 0.15);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            color: #2E7D87;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Story Section */
+        .story {
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, #f8f9fa 0%, white 100%);
+        }
+
+        .story-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .story h2 {
+            color: #2E7D87;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .story p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .story-highlight {
+            background: #2E7D87;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid #F59E0B;
+        }
+
+        .story-highlight p {
+            margin-bottom: 0;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: #2E7D87;
+            color: white;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #F59E0B;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .service-item h3 {
+            color: #F59E0B;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a5560;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-signature {
+            font-style: italic;
+            margin-top: 1rem;
+            color: #F59E0B;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="95" fill="none" stroke="white" stroke-width="3" opacity="0.3"/>
+                    <path d="M 100 75 C 100 65, 90 55, 80 55 C 65 55, 60 65, 60 75 C 60 90, 100 120, 100 120 C 100 120, 140 90, 140 75 C 140 65, 135 55, 120 55 C 110 55, 100 65, 100 75 Z" fill="white"/>
+                    <circle cx="100" cy="80" r="8" fill="#F59E0B" opacity="0.9"/>
+                    <circle cx="100" cy="80" r="5" fill="#FBBF24" opacity="0.8"/>
+                    <circle cx="28" cy="88" r="3" fill="#F59E0B" opacity="0.7"/>
+                    <circle cx="172" cy="88" r="3" fill="#F59E0B" opacity="0.7"/>
+                    <path d="M 60 78 Q 40 75, 25 82 Q 22 85, 28 88 Q 45 82, 58 85 Z" fill="white" opacity="0.6"/>
+                    <path d="M 62 82 Q 48 80, 35 88 Q 33 91, 38 93 Q 50 88, 60 90 Z" fill="white" opacity="0.75"/>
+                    <path d="M 140 78 Q 160 75, 175 82 Q 178 85, 172 88 Q 155 82, 142 85 Z" fill="white" opacity="0.6"/>
+                    <path d="M 138 82 Q 152 80, 165 88 Q 167 91, 162 93 Q 150 88, 140 90 Z" fill="white" opacity="0.75"/>
+                    <path d="M 70 145 L 100 110 L 130 145 Z" fill="none" stroke="white" stroke-width="3.5" stroke-linejoin="miter"/>
+                    <path d="M 97 113 L 100 110 L 103 113" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span class="logo-text">Pro Se It Ain't So</span>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Pro Se It Ain't So</h1>
+            <p class="tagline">Self Help Meets Smart Support</p>
+            <p>Empowering self-represented individuals with the resources, technology, and guidance needed to navigate the legal system with confidence and dignity.</p>
+            <a href="#services" class="cta-button">Learn How We Help</a>
+        </div>
+    </section>
+
+    <section class="values">
+        <div class="values-container">
+            <h2>Our Mission</h2>
+            <div style="max-width: 900px; margin: 0 auto 4rem auto; text-align: center; background: linear-gradient(135deg, #2E7D87 0%, #236970 50%, #2E7D87 100%); padding: 3.5rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(46, 125, 135, 0.3); position: relative; overflow: hidden;">
+                <!-- Decorative elements -->
+                <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(245, 158, 11, 0.15); border-radius: 50%;"></div>
+                <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+                
+                <p style="font-size: 1.3rem; line-height: 1.9; color: white; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); position: relative; z-index: 1;">
+                    Pro Se It Ain't So is dedicated to empowering justice-impacted individuals who are representing themselves in legal, document-related, or other matters. Our mission is to bridge the gap between access and advocacy by helping people perfect their documents with clarity, confidence, and precision. Through AI-assisted support, education, and compassion, we ensure that every person—regardless of circumstance—has the tools to be heard, respected, and represented with clarity and dignity.
+                </p>
+            </div>
+
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">❤️</div>
+                    <h3>Love & Compassion</h3>
+                    <p>We understand the challenges you face because we've been there. Every client receives empathy, respect, and genuine care.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🕊️</div>
+                    <h3>Freedom & Justice</h3>
+                    <p>Everyone deserves access to justice, regardless of their resources. We're committed to breaking down barriers in the legal system.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💪</div>
+                    <h3>Perseverance & Hope</h3>
+                    <p>We know the fight is hard, but giving up is not an option. We're here to support your journey every step of the way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="story-container">
+            <h2>Our Founder's Journey</h2>
+            <p>My journey started in a place I never imagined—behind bars. I spent over eight years in prison as a first-time offender, navigating a complex and often unforgiving legal system. During my trial, I hired five different attorneys, each time hoping for better representation. What I learned was harsh but true: when you lack resources, the quality of legal service you receive often reflects that.</p>
+            
+            <p>My life was on the line, and while I was the one most invested in it, I longed for an attorney who shared that sense of urgency. For some, representing someone in court is just a job. For me, it was everything. When I realized this, I took matters into my own hands, fighting for my freedom alongside my attorneys when I had one—and alone when I didn't.</p>
+            
+            <div class="story-highlight">
+                <p>"I witnessed countless people in the law library, fighting hopeless battles, limited by education, resources, and the daunting nature of the process itself. Many gave up. This experience became the foundation of Pro Se It Ain't So."</p>
+            </div>
+            
+            <p>The task of doing your own legal work can feel insurmountable, especially if you have no prior experience. Thankfully, I had worked as an executive legal assistant and had always taken an interest in the law. But for the average incarcerated individual, the challenges are staggering.</p>
+            
+            <p>I was fortunate to achieve some successes during my journey—winning appeal bail, filing a 440 motion, even getting my indictment dismissed (though the decision was later reversed). Those victories taught me how much determination and knowledge matter, but they also illuminated the barriers so many others face.</p>
+            
+            <p>At Pro Se It Ain't So, we believe no one should have to give up their fight for justice simply because they lack resources or expertise. We're here to help you make your voice heard—because with the right support, "pro se" doesn't have to mean "alone."</p>
+            
+            <div class="story-highlight">
+                <p>"The goal is for submissions from pro se litigants to look less and less like they were even done pro se—hence the name Pro Se It Ain't So."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-container">
+            <h2>Our Services</h2>
+            
+            <div style="max-width: 900px; margin: 0 auto 3rem auto; text-align: center;">
+                <p style="font-size: 1.1rem;">We offer comprehensive support for incarcerated individuals and their families, with services designed to strengthen your legal position and ensure your voice is heard.</p>
+            </div>
+
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: #F59E0B; text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Document Preparation & Filing Services</h3>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>📋 Habeas Corpus Petitions</h3>
+                        <p>State and federal habeas corpus petitions professionally prepared and formatted.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>⚖️ Post-Conviction Motions</h3>
+                        <p>440 motions to vacate judgment, 2255 motions for sentence reduction, and compassionate release petitions.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>📑 Appeals Documentation</h3>
+                        <p>Appeals briefs, notices of appeal, and appellate motion preparation.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>🎯 Parole & Clemency</h3>
+                        <p>Parole board packets, clemency applications, and commutation petitions.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>✍️ Pro Se Complaints</h3>
+                        <p>Professional formatting and editing of pro se legal complaints and filings.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>📄 Court Correspondence</h3>
+                        <p>Response letters to court orders and professional legal correspondence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: #F59E0B; text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Legal Research & Analysis</h3>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>🔍 Case Law Research</h3>
+                        <p>Comprehensive research of relevant case law and precedents for your specific situation.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>📚 Statute & Rule Identification</h3>
+                        <p>Locating applicable statutes, procedural rules, and recent legal developments.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>📊 Sentencing Guidelines</h3>
+                        <p>Research and analysis of sentencing guidelines relevant to your case.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>🎓 Legal Education</h3>
+                        <p>Plain-language explanations of legal terminology, court procedures, and filing requirements.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: #F59E0B; text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Case Organization & Support</h3>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>🗂️ Document Organization</h3>
+                        <p>Organizing case files, creating timelines, and cataloging evidence for easy reference.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>📅 Deadline Tracking</h3>
+                        <p>Monitoring and managing critical filing deadlines to protect your rights.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>📝 Template Guides</h3>
+                        <p>Step-by-step templates with instructions for common legal filings.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>💬 Family Communication</h3>
+                        <p>Plain-language updates for family members and coordination with outside support.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; margin-top: 3rem; border: 2px solid #F59E0B;">
+                <h3 style="color: #F59E0B; text-align: center; margin-bottom: 1rem;">Our Commitment</h3>
+                <p style="text-align: center; font-size: 1.1rem; line-height: 1.8;">
+                    We understand the financial constraints faced by incarcerated individuals and their families. Our fees are reasonable and flexible, designed to make quality legal support accessible. We accept payment from family members and work with you to find solutions that fit your situation.
+                </p>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; font-style: italic; opacity: 0.9; font-size: 0.95rem;">
+                *We do not provide legal advice or representation. We are not attorneys. We serve as a bridge, equipping self-represented individuals with professionally prepared documents and research resources to navigate the system effectively.
+            </p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h3>Ready to Get Started?</h3>
+            <p>Contact us today to learn how we can support your legal journey.</p>
+            <p style="margin-top: 1rem;">Email: info@proseitaintso.com | Phone: (555) 123-4567</p>
+            <p class="footer-signature">With all our love,<br>Pro Se It Ain't So</p>
+            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">© 2024 Pro Se It Ain't So. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -270,6 +270,8 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+/* Responsive */
+        @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
@@ -278,15 +280,109 @@
                 font-size: 1.2rem;
             }
 
-            nav ul {
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav {
                 flex-direction: column;
                 gap: 1rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+                text-align: center;
             }
 
             .logo-text {
+                font-size: 1rem;
+            }
+
+            .logo-svg {
+                width: 50px;
+                height: 50px;
+            }
+
+            /* Services Grid */
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-item {
+                padding: 1.5rem;
+            }
+
+            /* Values Grid */
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Story Section */
+            .story p {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            /* Subscription Plans */
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Price boxes */
+            .price-box {
+                transform: none !important;
+            }
+
+            /* How It Works */
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Mission section */
+            .values-container > div:first-child {
+                padding: 2rem 1rem !important;
+            }
+
+            /* Padding adjustments */
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .values, .story, .services {
+                padding: 2rem 1rem;
+            }
+
+            section[style*="padding: 4rem"] {
+                padding: 2rem 1rem !important;
+            }
+
+            /* Form container in subscription section */
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            /* Text sizing */
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
                 font-size: 1.2rem;
             }
+
+            /* Price display */
+            .price-box .price {
+                font-size: 2rem;
+            }
         }
+    </style>        }
     </style>
 </head>
 <body>

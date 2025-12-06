@@ -376,4 +376,19 @@ footer {
     .price-box .price {
         font-size: 2rem;
     }
+    
+}
+.buy-now-button {
+  background-color: #2E7D87; /* Your teal */
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.buy-now-button:hover {
+  background-color: #F59E0B; /* Your amber/gold */
 }
